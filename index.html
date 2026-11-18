@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi página personal</title>
+
+    <style>
+
+        .datos-academicos {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.7;
+    margin-top: 15px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #26334a;
+            background: linear-gradient(135deg, #dceeff, #eee5ff, #d8f8f5);
+            overflow-x: hidden;
+        }
+
+        header {
+            min-height: 420px;
+            text-align: center;
+            padding: 45px 20px;
+            color: white;
+            background: linear-gradient(120deg, #4257a8, #7654b8, #36a6b8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Robot animado */
+        .robot {
+            font-size: 85px;
+            display: inline-block;
+            animation: caminar 2s ease-in-out infinite;
+        }
+
+        @keyframes caminar {
+            0%, 100% {
+                transform: translateY(0) rotate(-8deg);
+            }
+            50% {
+                transform: translateY(-18px) rotate(8deg);
+            }
+        }
+
+        /* Burbujas decorativas */
+        .burbuja {
+            position: absolute;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 50%;
+            animation: flotar 6s infinite ease-in-out;
+        }
+
+        .b1 {
+            width: 50px;
+            height: 50px;
+            top: 50px;
+            left: 10%;
+        }
+
+        .b2 {
+            width: 25px;
+            height: 25px;
+            top: 200px;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .b3 {
+            width: 70px;
+            height: 70px;
+            bottom: 30px;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-35px);
+            }
+        }
+
+        nav {
+            text-align: center;
+            padding: 15px;
+            background: #263b70;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #8ff5e7;
+        }
+
+        main {
+            max-width: 950px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 28px;
+            margin-bottom: 25px;
+            border-radius: 18px;
+            box-shadow: 0 7px 20px rgba(50,70,120,0.12);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: aparecer 1s ease;
+        }
+
+        section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(50,70,120,0.2);
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #6652ad;
+            border-bottom: 2px solid #dcd5ff;
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .intereses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .interes {
+            background: #e8e4ff;
+            color: #51408e;
+            padding: 12px 18px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .interes:hover {
+            background: #c8f5ed;
+            transform: scale(1.08);
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 12px 22px;
+            margin-top: 10px;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(90deg, #6254b5, #32a9b7);
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: scale(1.08);
+            box-shadow: 0 5px 15px #aaa;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: white;
+            background: #263b70;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+    </style> 
+</head>
+
+<body>
+
+    <header>
+        <div class="burbuja b1"></div>
+        <div class="burbuja b2"></div>
+        <div class="burbuja b3"></div>
+
+        <h1>¡Hola! Soy: 
+             Sayra Michel Fierro Romero </h1>
+
+        <div class="robot">🤖</div>
+
+        <p class="datos-academicos">
+            Estudiante de Ingeniería en Sistemas Computacionales<br>
+            Universidad La Salle Chihuahua
+</p>
+    </header>
+
+    <nav>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#intereses">Mis intereses</a>
+        <a href="#aprendizaje">Mis metas</a>
+        <a href="#github">GitHub</a>
+    </nav>
+
+    <main>
+
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>
+                ¡Bienvenido a mi página personal! Soy Sayra estudiante de Ingeniería
+                en Sistemas Computacionales en la Universidad La Salle Chihuahua. Me
+                interese por esta carrera por el avance que he visto en lo que a la
+                tecnología respecta, aunque al principio pensé en estudiar medicina
+                la carrera realmente me gusto, me interesa conocer más sobre la
+                tecnología, desarrollar nuevas habilidades y aprender cómo funcionan
+                los sistemas que utilizamos todos los días 
+            </p>
+        </section>
+
+        <section id="intereses">
+            <h2>Mis intereses</h2>
+            <p>Algunos temas que llaman mi atención son:</p>
+
+            <div class="intereses">
+                <span class="interes">💻 Programación</span>
+                <span class="interes">🔐 Ciberseguridad</span>
+                <span class="interes">🎮 Desarrollo de videojuegos</span>
+                <span class="interes">🌐 Diseño web</span>
+                <span class="interes">🤖 Inteligencia artificial</span>
+            </div>
+        </section>
+
+        <section id="aprendizaje" class="lo-que-aprendere">
+            <h2>Lo que quiero aprender</h2>
+            <p>
+                Durante mi carrera quiero mejorar mis habilidades y ampliar
+                mis conocimientos. Un tema que llama mucho mi atención es
+                la ciberseguridad, ya que me gustaría conocerla y manejarla
+                mejor. También espero aprender diferentes lenguajes de
+                programación y desarrollar aplicaciones y páginas web.
+            </p>
+        </section>
+
+        <section id="github">
+            <h2>Mi GitHub</h2>
+            <p>
+                Aquí puedes conocer algunos de mis proyectos y trabajos
+                relacionados con la programación.
+            </p>
+
+            <a class="boton"
+               href="https://github.com/Michel199-1"
+               target="_blank">
+                🚀 Visitar mi GitHub
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Creado por [Sayra Michel Fierro Romero] | 2026</p>
+        <p>Aprendiendo sobre paginas web 💡</p>
+    </footer>
+
+</body>
+</html>
